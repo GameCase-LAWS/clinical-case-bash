@@ -1,0 +1,13 @@
+{
+  "gameCode": 2,
+  "gameName": "Clinical Case",
+  "gameProfessionalName": "Clínico",
+  "gameCaseUrl": "http://gamecase.games",
+  "caseRequiredImages": [
+    "consultorio-vista-frontal",
+    "paciente-exame",
+    "paciente-prontuario",
+    "consultorio-vista-lateral",
+    "paciente"
+  ]
+}
