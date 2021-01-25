@@ -14,6 +14,8 @@ select opt in "${options[@]}"; do
   esac
 done
 
+echo 'Clonando e ajustando o repositório '$PROJECT_NAME 'para criar clinical-case-'$opt
+
 # Delete previous project folder
 rm -f -r $PROJECT_NAME
 
@@ -32,6 +34,9 @@ then
 
   # Substituir imagens
   cp -r files/assets $PROJECT_NAME/app
+
+  # Set name folder to move the modifications
+  PROJECT_NAME_FOLDER='clinical-case-app'
 fi
 
 if [ "$PROJECT_NAME" = "dental-case-web" ];
@@ -51,6 +56,14 @@ then
 
   # Substituir imagens
   cp -r files/assets $PROJECT_NAME/src
+
+  # Set name folder to move the modifications
+  PROJECT_NAME_FOLDER='clinical-case-web'
 fi
+
+# Move the modifications to Home dir
+mv $PROJECT_NAME $HOME/$PROJECT_NAME_FOLDER
+
+echo 'Projeto' $PROJECT_NAME_FOLDER criado no diretório $HOME
 
 echo "Done! =)"
