@@ -62,7 +62,7 @@ then
   rm -f -r $opt/.git
 fi
 
-echo 'Entrando no app/'
+echo 'Entrando em' $opt
 cd $opt/
 echo "Instalando os packages..."
 npm install
