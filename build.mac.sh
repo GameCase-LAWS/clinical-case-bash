@@ -63,7 +63,7 @@ then
 fi
 
 echo 'Entrando no app/'
-cd app/
+cd $opt/
 echo "Instalando os packages..."
 npm install
 
