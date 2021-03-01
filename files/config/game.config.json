@@ -2,7 +2,8 @@
   "gameCode": 2,
   "gameName": "Clinical Case",
   "gameProfessionalName": "Clínico",
-  "gameCaseUrl": "https://gamecase.games",
+  "gameCaseUrl": "//gamecase.games",
+  "gameCaseUrlHttp": "http://gamecase.games",
   "caseRequiredImages": [
     "consultorio-vista-frontal",
     "paciente-exame",
