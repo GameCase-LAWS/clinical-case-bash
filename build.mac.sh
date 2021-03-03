@@ -30,6 +30,9 @@ then
   # Modificar android para ios em app.json
   sed -i '.bak' 's/android-icon/ios-icon/g' $opt/app.json
 
+  # Modificar a versao do app
+  sed -i '.bak' 's/"version": "2.0.0"/"version": "1.0.0"/g' $opt/app.json
+
   # Substituir arquivos de configuração
   cp -r files/config $opt/app
 

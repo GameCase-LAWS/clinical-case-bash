@@ -27,6 +27,9 @@ then
   sed -i 's/Dental/Clinical/g' $opt/app.json
   sed -i 's/DENTAL/CLINICAL/g' $opt/app.json
 
+  # Modificar a versao do app
+  sed -i 's/"version": "2.0.0"/"version": "1.0.0"/g' $opt/app.json
+
   # Substituir arquivos de configuração
   cp -r files/config $opt/app
 
@@ -57,6 +60,7 @@ then
 
   # Deletar pasta .git para evitar incidentes
   rm -f -r $opt/.git
+
 fi
 
 echo 'Entrando em' $opt
