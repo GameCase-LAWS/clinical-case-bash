@@ -1,7 +1,7 @@
 {
-  "gameCode": 2,
-  "gameName": "Clinical Case",
-  "gameProfessionalName": "Clínico",
+  "gameCode": 1,
+  "gameName": "Dental Case",
+  "gameProfessionalName": "Dental",
   "gameCaseUrl": "//gamecase.games",
   "gameCaseUrlHttp": "http://gamecase.games",
   "caseRequiredImages": [

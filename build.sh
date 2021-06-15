@@ -5,6 +5,21 @@ select opt in "${options[@]}"; do
   case $opt in
     "web")
       PROJECT_NAME="dental-case-web"
+			# Ask for update the site
+			echo 'Would you like to build and update the site after configuration?'
+			options2=("yes" "no")
+			select opt2 in "${options2[@]}"; do
+				case $opt2 in
+					"yes")
+							POST_CONFIG=""
+						break
+						;;
+					"no")
+						POST_CONFIG=""
+						break
+						;;
+				esac
+			done
       break
       ;;
     "app")
@@ -14,11 +29,12 @@ select opt in "${options[@]}"; do
   esac
 done
 
+
 # Delete previous project folder
-rm -f -r $opt
+#rm -f -r $opt
 
 # Clone 'Dental Case' git repository
-git clone https://github.com/GameCase-LAWS/$PROJECT_NAME.git $opt
+#git clone https://github.com/GameCase-LAWS/$PROJECT_NAME.git $opt
 
 if [ "$opt" = "app" ];
 then
@@ -42,6 +58,7 @@ fi
 
 if [ "$opt" = "web" ];
 then
+
   # Replace 'dental' term for 'clinical'
   sed -i 's/dental/clinical/g' $opt/package.json
   sed -i 's/Dental/Clinical/g' $opt/package.json
@@ -66,7 +83,16 @@ fi
 echo 'Entrando em' $opt
 cd $opt/
 
-echo "Instalando os packages..."
-npm install
+echo -e "\nInstalando os packages..."
+exec npm install &&
+
+if [$opt2 == "yes"]
+then
+	cd web/ && npm run build && sudo cp -r build/* /var/www/gamecase.games/html/ && sudo service nginx reload
+else
+	echo -e "\nTo update the site type: \n
+	cd web/ && npm run build && sudo cp -r build/* /var/www/gamecase.games/html/ && sudo service nginx reload
+"
+fi
 
 echo "Done! =)"
