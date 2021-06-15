@@ -1,4 +1,8 @@
 #!/bin/sh
+
+#Get project name
+PROJECT=`echo $(dirname $(realpath $0)) | sed -r "s@^($(dirname $(dirname $(realpath $0)))/)@@" | sed -r "s@-@@g" | sed -r "s@bash@@g"`
+
 echo 'Select an option and press Enter: '
 options=("web" "app")
 select opt in "${options[@]}"; do
@@ -88,10 +92,10 @@ exec npm install &&
 
 if [$opt2 == "yes"]
 then
-	cd web/ && npm run build && sudo cp -r build/* /var/www/gamecase.games/html/ && sudo service nginx reload
+	cd web/ && npm run build && sudo cp -r build/* /var/www/$PROJECT.games/html/ && sudo service nginx reload
 else
 	echo -e "\nTo update the site type: \n
-	cd web/ && npm run build && sudo cp -r build/* /var/www/gamecase.games/html/ && sudo service nginx reload
+	cd web/ && npm run build && sudo cp -r build/* /var/www/$PROJECT.games/html/ && sudo service nginx reload
 "
 fi
 
