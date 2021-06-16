@@ -35,10 +35,10 @@ done
 
 
 # Delete previous project folder
-#rm -f -r $opt
+rm -f -r $opt
 
 # Clone 'Dental Case' git repository
-#git clone https://github.com/GameCase-LAWS/$PROJECT_NAME.git $opt
+git clone https://github.com/GameCase-LAWS/$PROJECT_NAME.git $opt
 
 if [ "$opt" = "app" ];
 then
@@ -63,6 +63,8 @@ fi
 if [ "$opt" = "web" ];
 then
 
+  echo -e "src/\nbuild/\n*.js" >> $opt/.eslintignore
+
   # Replace 'dental' term for 'clinical'
   sed -i 's/dental/clinical/g' $opt/package.json
   sed -i 's/Dental/Clinical/g' $opt/package.json
@@ -84,19 +86,14 @@ then
 
 fi
 
-echo 'Entrando em' $opt
-cd $opt/
-
-echo -e "\nInstalando os packages..."
-exec npm install &&
-
-if [$opt2 == "yes"]
+if [ "$opt2" = "yes" ]
 then
-	cd web/ && npm run build && sudo cp -r build/* /var/www/$PROJECT.games/html/ && sudo service nginx reload
+	 echo -e "\nInstalling packages in web/ ..." && cd web/ \
+   && npm install && echo -e "\n\e[0;32mPackages installed successfuly.\e[m" || echo -e "\n\e[1;31mError installing packages.\e[m" \
+   && npm run build && sudo cp -r build/* /var/www/$PROJECT.games/html/ && sudo service nginx reload
 else
 	echo -e "\nTo update the site type: \n
-	cd web/ && npm run build && sudo cp -r build/* /var/www/$PROJECT.games/html/ && sudo service nginx reload
-"
+	cd web/ && npm run build && sudo cp -r build/* /var/www/$PROJECT.games/html/ && sudo service nginx reload"
 fi
 
-echo "Done! =)"
+echo "Done!"

@@ -1,8 +1,9 @@
 {
-  "gameCode": 1,
-  "gameName": "Dental Case",
-  "gameProfessionalName": "Dental",
+  "gameCode": 2,
+  "gameName": "Clinical Case",
+  "gameProfessionalName": "Clínico(a)",
   "gameCaseUrl": "//gamecase.games",
+  "gameCaseApiUrl":"//api.gamecase.games",
   "gameCaseUrlHttp": "http://gamecase.games",
   "caseRequiredImages": [
     "consultorio-vista-frontal",
