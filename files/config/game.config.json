@@ -1,7 +1,7 @@
 {
   "gameCode": 2,
   "gameName": "Clinical Case",
-  "gameProfessionalName": "Clínico",
+  "gameProfessionalName": "Clínico(a)",
   "gameCaseUrl": "//gamecase.games",
   "gameCaseApiUrl": "//api.gamecase.games",
   "gameCaseUrlHttp": "http://gamecase.games",
