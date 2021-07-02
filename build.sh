@@ -48,7 +48,7 @@ then
   sed -i 's/DENTAL/CLINICAL/g' $opt/app.json
 
   # Modificar a versao do app
-  sed -i 's/"version": ".*"/"version": "1.2.0"/g' $opt/app.json
+  sed -i 's/"version": ".*"/"version": "1.2.1"/g' $opt/app.json
 
   # Substituir arquivos de configuração
   cp -r files/config $opt/app
