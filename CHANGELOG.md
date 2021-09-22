@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## Versão 1.2.7 - 22-09-2021
+Mudanças descritas na [versão 2.3.7 do Dental Case](https://github.com/GameCase-LAWS/dental-case-app/main/CHANGELOG.md#versao-2.3.7)
+
 ## Versão 1.2.4 - 20-07-2021
 Mudanças descritas na [versão 2.3.4 do Dental Case](https://github.com/GameCase-LAWS/dental-case-app/main/CHANGELOG.md#versao-2.3.4)
 
